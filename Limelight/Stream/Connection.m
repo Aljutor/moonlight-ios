@@ -496,12 +496,8 @@ void ClConnectionStatusUpdate(int status)
 
     LiInitializeVideoCallbacks(&_drCallbacks);
     _drCallbacks.setup = DrDecoderSetup;
-<<<<<<< HEAD
     _drCallbacks.start = DrStart;
     _drCallbacks.stop = DrStop;
-=======
-    _drCallbacks.cleanup = DrCleanup;
->>>>>>> eaa8fa6 (Add Frame Pacing feature)
 
     // RFI doesn't work properly with HEVC on iOS 11 with an iPhone SE (at least)
     // It doesnt work on macOS either, tested with Network Link Conditioner.
@@ -511,11 +507,7 @@ void ClConnectionStatusUpdate(int status)
 #if !TARGET_OS_TV
                                 CAPABILITY_REFERENCE_FRAME_INVALIDATION_AVC |
 #endif
-<<<<<<< HEAD
                                 CAPABILITY_PULL_RENDERER;
-=======
-                          CAPABILITY_PULL_RENDERER;
->>>>>>> eaa8fa6 (Add Frame Pacing feature)
 
     LiInitializeAudioCallbacks(&_arCallbacks);
     _arCallbacks.init = ArInit;

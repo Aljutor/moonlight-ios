@@ -121,16 +121,6 @@ int DrSubmitDecodeUnit(PDECODE_UNIT decodeUnit);
 // TODO: Refactor this
 int DrSubmitDecodeUnit(PDECODE_UNIT decodeUnit);
 
-- (void)displayLinkCallback:(CADisplayLink *)sender
-{
-    VIDEO_FRAME_HANDLE handle;
-    PDECODE_UNIT du;
-    
-    while (LiPollNextVideoFrame(&handle, &du)) {
-        LiCompleteVideoFrame(handle, DrSubmitDecodeUnit(du));
-    }
-}
-
 #define FRAME_START_PREFIX_SIZE 4
 #define NALU_START_PREFIX_SIZE 3
 #define NAL_LENGTH_PREFIX_SIZE 4
